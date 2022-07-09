@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Url Shortener</title>
+</head>
+<body>
+<center><form>
+    <label>URL SHORTENER</label><br>
+    <label for="inputUrl">Input URL</label><br>
+    <input type="text" id="inputUrl" name="inputUrl" size="50" placeholder="Enter your URL"><br>
+    <label for="shortUrl">Short URL</label><br>
+    <input type="text" id="shortUrl" name="shortUrl" size="50"><br><br>
+    <button type="Button">Submit</button>
+
+
+</form></center>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({
+            type:'POST',
+            dataType:"json",
+            url:'http://localhost:8080/generate',
+            data:JSON.stringify({
+                "inputUrl": $("#inputUrl").val()
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success:function(data){
+                $("#shortUrl").val(data.outputUrl);
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

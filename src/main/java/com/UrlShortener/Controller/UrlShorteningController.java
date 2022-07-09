@@ -4,15 +4,11 @@ import com.UrlShortener.Model.UrlEntity;
 import com.UrlShortener.Model.UrlRequest;
 import com.UrlShortener.Model.UrlResponse;
 import com.UrlShortener.Service.URLService;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
